@@ -1,0 +1,18 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sqlalchemy==2.0.36
+alembic==1.14.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+yfinance==1.8.0  # 0.2.51 ya no funciona con Yahoo
+anthropic==0.43.0
+python-multipart==0.0.20
+httpx==0.28.1
+apscheduler==3.11.0
+pdfplumber==0.11.4
+beautifulsoup4==4.12.3
+reportlab==4.2.5
+openpyxl==3.1.5
+# Fijados: versiones nuevas bloqueadas por el Control inteligente de aplicaciones de Windows
+pandas==2.2.3
+numpy==1.26.4

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background:        0 0% 98%;
+    --foreground:        220 13% 9%;
+    --card:              0 0% 100%;
+    --card-foreground:   220 13% 9%;
+    --popover:           0 0% 100%;
+    --popover-foreground:220 13% 9%;
+    --primary:           158 60% 37%;   /* brand-500 */
+    --primary-foreground:0 0% 100%;
+    --secondary:         220 13% 95%;
+    --secondary-foreground:220 13% 20%;
+    --muted:             220 13% 95%;
+    --muted-foreground:  220 9% 46%;
+    --accent:            220 13% 93%;
+    --accent-foreground: 220 13% 9%;
+    --destructive:       0 84% 60%;
+    --destructive-foreground:0 0% 100%;
+    --border:            220 13% 91%;
+    --input:             220 13% 91%;
+    --ring:              158 60% 37%;
+    --radius:            0.625rem;
+
+    /* Chart palette */
+    --chart-1: 158 60% 37%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 292 84% 61%;
+    --chart-5: 0 84% 60%;
+
+    /* Sidebar */
+    --sidebar-width: 240px;
+    --sidebar-collapsed: 64px;
+  }
+
+  .dark {
+    --background:        220 16% 8%;
+    --foreground:        210 20% 92%;
+    --card:              220 16% 11%;
+    --card-foreground:   210 20% 92%;
+    --popover:           220 16% 11%;
+    --popover-foreground:210 20% 92%;
+    --primary:           158 55% 45%;
+    --primary-foreground:0 0% 100%;
+    --secondary:         220 16% 16%;
+    --secondary-foreground:210 20% 80%;
+    --muted:             220 16% 16%;
+    --muted-foreground:  220 10% 55%;
+    --accent:            220 16% 18%;
+    --accent-foreground: 210 20% 92%;
+    --destructive:       0 72% 51%;
+    --destructive-foreground:0 0% 100%;
+    --border:            220 16% 18%;
+    --input:             220 16% 18%;
+    --ring:              158 55% 45%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  /* Financial number formatting */
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+
+  /* Profit / loss colors */
+  .text-profit { color: theme('colors.profit.DEFAULT'); }
+  .text-loss   { color: theme('colors.loss.DEFAULT'); }
+  .bg-profit   { background-color: theme('colors.profit.light'); }
+  .bg-loss     { background-color: theme('colors.loss.light'); }
+
+  /* Skeleton shimmer */
+  .skeleton {
+    background: linear-gradient(90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--accent)) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% auto;
+    @apply animate-shimmer rounded-md;
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-thin::-webkit-scrollbar       { width: 4px; height: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track  { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb  { @apply rounded-full bg-border; }
+}

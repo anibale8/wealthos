@@ -1,0 +1,10 @@
+data/*
+!data/.gitkeep
+*.db
+*.log
+.env
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
